@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+
+<div class="busqueda">
+<h1>Busca videos de YouTube</h1>
+<form (ngSubmit)="onSearch()">
+  <input class=" place"type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Ingrese una palabra">
+  <button type="submit">Buscar</button>
+</form>
+
+
+
+<ul>
+    <li *ngFor="let video of videos" (click)="selectVideo(video)">
+      <h2>{{ video.snippet.title }}</h2>
+      <iframe width="500" height="300" [src]="getVideoUrl(video.id.videoId)" frameborder="10" allowfullscreen></iframe>
+    </li>
+  </ul>
+
+</div>
+<app-footer></app-footer>
