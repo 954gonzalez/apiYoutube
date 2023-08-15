@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
         if (this.form.valid) {
 
-          this.client.postRequest('http://localhost:5000/api/v01/user/login', {
+          this.client.postRequest('20.185.178.150:5000/api/v01/user/login', {
             email: this.form.value.email,
             password: this.form.value.password
           }).subscribe(
