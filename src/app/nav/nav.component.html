@@ -14,9 +14,9 @@
       <a>Bienvenid@ {{auth.getCourrentUser()}}</a>
     </li>
 
-     <li>
-      <a [routerLink]="['/youtube']" >youtube</a>
-     </li>
+      <li *ngIf="auth.isLoggedIn() | async" class="">
+        <a  [routerLink]="['/youtube']">YouTube</a>
+      </li>
     <li *ngIf="auth.isLoggedIn() | async" class="nav-item active">
       <a [routerLink]="['/']" (click)="auth.logout()">Salir</a>
     </li>
