@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
         if (this.form.valid) {
 
-          this.client.postRequest('https://back-despliegue.onrender.com', {
+          this.client.postRequest('https://back-despliegue.onrender.com/api/v01/user/login', {
             email: this.form.value.email,
             password: this.form.value.password
           }).subscribe(
